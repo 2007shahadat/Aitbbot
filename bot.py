@@ -3,8 +3,10 @@ import requests
 from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
 
-BOT_TOKEN = "7869722331:AAG5GM9D4HrJ2HwCovYm1I0Dastj0KDCvOA"
-GEMINI_API_KEY = "AIzaSyD2IpDlJLjGNGPKk5l1xjVDQQ8JYL2xT1w"
+import os
+
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent"
 
 logging.basicConfig(level=logging.INFO)
